@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content">
+
+    </div>
+
+    <script>
+        fetch('https://ci-swapi.herokuapp.com/api/')
+            .then(response => response.json()) // you can change the method to .text or .json
+            .then(data => {
+                document.getElementById('content').innerText = data.people; // Adding data.people will display people message. you can also write it this way data['people']
+            }); // You can also write it this way .then(data => displayData(data)) this is utilizing the function written below.
+            .catch((e) => {
+                console.error('Error: ', e);
+            })
+
+        function displayData(data) {
+            document.getElementById('content').innerText = data;
+        }
+    </script>
+
+</body>
+
+</html>
