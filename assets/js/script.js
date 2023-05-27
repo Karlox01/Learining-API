@@ -27,9 +27,9 @@ async function postForm(e) {
     } else {
         throw new Error(data.error);
     }
-    // for (let entry of form.entries()) { This will log out the answers we type in on the web page inside the console, This is purely to simulate what gets sent to server.
-    //     console.log(entry);
-    // }
+    for (let entry of form.entries()) { // This will log out the answers we type in on the web page inside the console, This is purely to simulate what gets sent to server.
+        console.log(entry);
+    }
 }
 
 
